@@ -1,1 +1,1 @@
-web: gunicorn app:siti.py
+web: gunicorn siti:app
