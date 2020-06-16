@@ -1,9 +1,13 @@
 import pymongo
 from pymongo import MongoClient
 
-
-client = MongoClient()
-db = client.chatbot
+dbuser ="mongobitch"
+dbpassword="YouShouldBeAwareofThisShit!1!1!"
+dbhost ="ds035613.mlab.com"
+dbport=35613
+dbname="heroku_w4pfm1mj"
+client = MongoClient(host=dbhost,port=dbport,username=dbuser, password=dbpassword,authSource=dbname)
+db = client.heroku_w4pfm1mj
 
 # Get the intent database
 def getIntentCollection(collectionName):
