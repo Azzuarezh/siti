@@ -34,14 +34,14 @@ def getresponsefromsiti():
         responsetext = {'response':"ini command"}
         if '/showmemoney' in text: 
 
-            """r = requests.post(
+            r = requests.post(
                 URL_TELEGRAM_BOT + API_TELEGRAM_TOKEN + "/sendPhoto", 
                 data={
                     'chat_id':chatId, 
                     'caption':'here is your money dude!',
                     'photo':"AgACAgQAAxkDAAOZXtzKulhuIBLWfQftNRgY_uB01MsAAjirMRtXKOxSZ2MG3TEIR5_zPn8jXQADAQADAgADbQADH14CAAEaBA"
                     }
-                )"""
+                )
             
         responsedata = json.dumps(responsetext)
         response = Response(responsedata, status=200, mimetype='application/json')
@@ -104,10 +104,10 @@ def getresponsefromsiti():
         response = Response(responsedata, status=200, mimetype='application/json')
         
         #testing send to telegram bot
-        """r = requests.post(
+        r = requests.post(
             URL_TELEGRAM_BOT + API_TELEGRAM_TOKEN + "/sendMessage", 
             data={'chat_id':chatId, 'text':responsetext['response']}
-            )"""
+            )
 
     return response
 
