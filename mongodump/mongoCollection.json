@@ -1,0 +1,109 @@
+[{
+  "_id": {
+    "$oid": "5d90b365faee930468f20f98"
+  },
+  "intentId": "greetings",
+  "description": {
+    "type": "greetings",
+    "args": [],
+    "keyword": [
+      [
+        "required",
+        "greetings_keyword"
+      ]
+    ]
+  },
+  "greetings_keyword": [
+    "hi",
+    "hello",
+    "halo",
+    "hai"
+  ],
+  "teachWords": [
+    "halo om",
+    "hi kakak",
+    "hello masbro",
+    "hai mas",
+    "Hai",
+    "Hi",
+    "hi",
+    "Halo",
+    "Hello",
+    "hai kak",
+    "Hi Kak",
+    "hi kak",
+    "Hello kakak"
+  ],
+  "response": [
+    "halo juga <user>",
+    "hai, apa kabar <user>?",
+    "halo <user>",
+    "ya halo <user>"
+  ]
+},{
+  "_id": {
+    "$oid": "5d90e784a308200468376713"
+  },
+  "intentId": "activity",
+  "description": {
+    "type": "activity",
+    "args": [],
+    "keyword": [
+      [
+        "required",
+        "activity_keyword"
+      ]
+    ]
+  },
+  "teachWords": [
+    "lagi apa?",
+    "sedang apa",
+    "lg apa?",
+    "gy ap?",
+    "lg ap?",
+    "lg ngapain?",
+    "gy ngapain?"
+  ],
+  "response": [
+    "lg ga ngapa-ngapain",
+    "lagi duduk",
+    "lagi tiduran",
+    "lagi chat"
+  ]
+},{
+  "_id": {
+    "$oid": "5edf3dcf8ad32ebf2fd2344b"
+  },
+  "intentId": "TimeFn",
+  "description": {
+    "type": "TimeFn",
+    "args": [
+      [
+        "optional",
+        "scopes"
+      ]
+    ],
+    "keyword": [
+      [
+        "required",
+        "time_keyword"
+      ],
+      [
+        "optional",
+        "scopes"
+      ]
+    ]
+  },
+  "teachWords": [
+    "Jam berapa sekarang?",
+    "tanggal berapa sekarang?",
+    "sekarang tanggal berapa?",
+    "hari ini hari apa?",
+    "hari apa ini?",
+    "Hari apa ini",
+    "sekarang jam berapa?"
+  ],
+  "response": [
+    "sekarang {} {}"
+  ]
+}]

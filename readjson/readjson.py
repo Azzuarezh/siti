@@ -7,24 +7,25 @@ import datetime
 import random
 import re
 
-BOT_NAME = "Siti"
-YOUR_NAME = "kamu"
 
 # buat chatbot, translate list jadi tupple untuk keyword di dalam description
 # dan arguments
 def createDictionary(jsonobject):
     # hapus _id intentId
     copyjsonobject = dict(jsonobject)
+    print("------------")
     for key in copyjsonobject.keys():
         if type(copyjsonobject[key]) is dict:
             # in tree view such as description, keyword,or etc.
             for subkey in copyjsonobject[key]:
+                print('\tsubkey : "', subkey, '" | type : ', type(copyjsonobject[key][subkey]))
                 if type(copyjsonobject[key][subkey]) is list:
                     # in tree view such as description[args] or description[type]
                     jsonobject[key][subkey] = translateListToTuple(copyjsonobject[key][subkey])
 
     entriestoremove =('_id', 'intentId', 'response','teachWords')
     list(map(copyjsonobject.__delitem__, filter(copyjsonobject.__contains__, entriestoremove)))
+    print("json object : " , copyjsonobject)
     return copyjsonobject
 
 
@@ -34,6 +35,7 @@ def translateListToTuple(list):
     tmplist: List[Tuple[Any, Any]] = []
     if len(list) > 0:
         for item in list:
+            print("\t\t\titem : ",item)
             if item[0].lower() == "required":
                 key: int = ip.REQUIRE
             elif item[0].lower() == "optional":

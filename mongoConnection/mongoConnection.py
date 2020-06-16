@@ -1,29 +1,30 @@
 import pymongo
 from pymongo import MongoClient
 
-client = MongoClient()
-db = client.chatbox
+dbuser ="mongobitch"
+dbpassword="YouShouldBeAwareofThisShit!1!1!"
+dbhost ="ds035613.mlab.com"
+dbport=35613
+dbname="heroku_w4pfm1mj"
+client = MongoClient(host=dbhost,port=dbport,username=dbuser, password=dbpassword,authSource=dbname)
+db = client.heroku_w4pfm1mj
 
 # Get the intent database
 def getIntentCollection(collectionName):
-    db = client.chatbox
     collection = getCollection(collectionName)
     document = collection.find({'intentId': {'$exists': True}})
     return document
 
 def getCollection(collectionName):
-    db = client.chatbox
     assert isinstance(db[collectionName],object)
     return db[collectionName]
 
 def getIntent(intentName, collectionName):
-    db = client.chatbox
     collection = getCollection(collectionName)
     document = collection.find({'intentId': intentName})
-    return document;
+    return document
 
 def findOne(collectionName, criteria):
-    db = client.chatbox
     collection = getCollection(collectionName)
     document = collection.find_one(criteria)
     return document
