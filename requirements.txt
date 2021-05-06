@@ -8,7 +8,7 @@ Click==7.0
 Django==2.2.5
 docutils==0.15.2
 Flask==1.1.1
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Flask-RESTful==0.3.7
 gensim==3.8.1
 gunicorn==20.0.4
